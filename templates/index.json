@@ -16,7 +16,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/35.jpg",
-            "heading": "Slide heading",
+            "heading": "Testing 1",
             "heading_size": "h1",
             "subheading": "Slide description",
             "button_label": "Button label",
@@ -31,7 +31,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/orange-poles-create-a-tunnel.jpg",
-            "heading": "Slide heading",
+            "heading": "Testing 2",
             "heading_size": "h1",
             "subheading": "Slide description",
             "button_label": "Button label",
