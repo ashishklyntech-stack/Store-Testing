@@ -25,12 +25,21 @@ Do not delete unless Wholesale Gorilla has been uninstalled.
     // we need to remove data-translation-selector attr
     if (titleElement && titleElement.textContent !== 'Apply for a Wholesale Account') {
       titleElement.removeAttribute('data-translation-selector');
+    } else {
+      if ('{{ page.title }}' !== 'Wholesale Registration Form') {
+        titleElement.textContent = '{{ page.title }}';
+      }
     }
 
     // Check if the descriptio element exists and its text content is not default
     // we need to remove data-translation-selector attr
     if (descriptionElement && descriptionElement.textContent !== 'Use this form to apply for a wholesale account.') {
       descriptionElement.removeAttribute('data-translation-selector');
+    } else {
+      const wsgDefaultPageContent = 'Wholesale Gorilla';
+      if (`{{ page.content }}`.indexOf(wsgDefaultPageContent) === -1) {
+        descriptionElement.innerHTML = `{{ page.content }}`;
+      }
     }
   });
 </script>

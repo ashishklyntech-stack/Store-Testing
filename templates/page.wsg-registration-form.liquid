@@ -54,14 +54,29 @@ Do not delete unless Wholesale Gorilla has been uninstalled.
             data-translation-selector="placeLastName">
         </div>
       </div>
-      <!-- EMAIL (required) -->
-      <div style="margin-bottom: 15px;">
-        <div>
+      <!-- EMAIL (required) AND --COMPANY NAME (optional)---->
+      <div class="wsg-two-column" style="margin-bottom: 15px;">
+        <div class="wsg-input-small">
           <label id="customer_email_label" for="email" data-translation-selector="labelEmail">Email</label>
           <label id="customer_email_label_error" for="email" class='wsg-hidden-label wsg-label-error' data-translation-selector="labelRequired">Required</label>
           <input class="wsg-input" type="email" value="" name="customer_email" id="email" placeholder="Email" autocorrect="off"
             autocapitalize="off" required data-translation-selector="placeEmail">
         </div>
+        <div class="wsg-input-small">
+          <label
+            for="company"
+            data-translation-selector="labelCompany"
+            >Company</label
+          >
+          <input
+            type="text"
+            value=""
+            name="company"
+            id="company"
+            placeholder="Company Name"
+            data-translation-selector="placeCompany"
+          />
+      </div>
       </div>
       <!--SHIPPING ADDRESS (optional)-->
       <div class='wsg-section-header'>

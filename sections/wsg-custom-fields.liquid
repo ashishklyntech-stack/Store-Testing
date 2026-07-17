@@ -146,32 +146,6 @@ Do not delete unless Wholesale Gorilla has been uninstalled.
           <span id="file_label" data-translation-selector="fileUploadLabel">No file selected</span>
         </div>
       </div>
-    {% comment %} Company field block {% endcomment %}
-    {% when 'company_block' %}
-      <div class="grid__item medium-up--one-half" {{ block.shopify_attributes }}>
-        <label id="company_label" for="company" data-translation-selector="companyName">
-          {{ block.settings.company }}
-        </label>
-        <label
-          id="company_label_error"
-          for="{{ block.settings.company }}"
-          class='wsg-hidden-label wsg-label-error'
-          data-translation-selector="labelRequired"
-        >
-          Required
-        </label>
-        <input
-          id="company"
-          name="company"
-          type="text"
-          value=""
-          data-translation-selector="companyName"
-          placeholder="{{ block.settings.company }}"
-          class="full-width"
-          {% if block.settings.isRequired == true %}
-            required
-          {% endif %} />
-        </div>
     {% comment %} Dropdown block {% endcomment %}
     {% when 'dropdown_block' %}
       <div class="grid__item medium-up--one-half" {{ block.shopify_attributes }}>
@@ -365,7 +339,6 @@ Do not delete unless Wholesale Gorilla has been uninstalled.
   // next step, we need to remove data-translation-selector attr if the text of the element is not default
   const termsAndConditionsElement = document.querySelector('[data-translation-selector="termsAndConditions"]');
   const uploadFileElement = document.querySelector('[data-translation-selector="uploadFile"]');
-  const companyNameElement = document.querySelector('[data-translation-selector="companyName"]');
   const selectOptionElement = document.querySelector('[data-translation-selector="selectOption"]');
   const phoneElement = document.querySelector('[data-translation-selector="labelPhone"]');
   const vatNumberElement = document.querySelector('[data-translation-selector="labelTaxId"]');
@@ -383,13 +356,6 @@ Do not delete unless Wholesale Gorilla has been uninstalled.
 
   if (uploadFileElement && uploadFileElement.value.trim() !== 'Upload File') {
     uploadFileElement.removeAttribute('data-translation-selector');
-  }
-
-  if (companyNameElement && companyNameElement.textContent.trim() !== 'Company Name') {
-    const companyNameElements = document.querySelectorAll('[data-translation-selector="companyName"]');
-    companyNameElements.forEach(element => {
-      element.removeAttribute('data-translation-selector');
-    });
   }
 
   if (selectOptionElement && selectOptionElement.textContent.trim() !== 'Select an option') {
@@ -591,30 +557,6 @@ Do not delete unless Wholesale Gorilla has been uninstalled.
           "label": "Required",
           "default": false,
           "info" : "Checking this box will require users to upload a file in order to submit the registration form."
-        }
-      ]
-    },
-    {
-      "type": "company_block",
-      "limit": 1,
-      "name": "Company",
-      "settings": [
-        {
-          "type": "paragraph",
-          "content": "Capture the company name and add it to the customer's default address."
-        },
-        {
-          "type": "text",
-          "id": "company",
-          "label": "Company Name",
-          "default": "Company Name"
-        },
-        {
-          "type": "checkbox",
-          "id": "isRequired",
-          "label": "Required",
-          "default": false,
-          "info" : "Checking this box will require users to enter text into this input in order to submit the registration form."
         }
       ]
     },
